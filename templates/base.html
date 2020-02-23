@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css" />
+    <title>{% block title %}{% endblock %} Corey's Website</title>
+    {% endblock %}
+</head>
+
+<body>
+    {% block content %}
+    {% endblock %}
+
+    {% block footer %}
+        Copyright by CAH
+    {% endblock %}
+</body>
+</html>
