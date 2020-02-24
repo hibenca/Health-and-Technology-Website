@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% block head %}
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="style.css" />
-    <title>{% block title %}{% endblock %} Corey's Website</title>
-    {% endblock %}
+        <link rel="stylesheet" href="{{ url_for("static", filename="css/main.css") }}"/>
+    {% block head %} {% endblock %}
 </head>
 
 <body>
-    {% block content %}
-    {% endblock %}
-
-    {% block footer %}
-        Copyright by CAH
-    {% endblock %}
+    {% block body %}{% endblock %}
+    {% block footer %} <footer> Copyright by CAH </footer> {% endblock %}
 </body>
 </html>
