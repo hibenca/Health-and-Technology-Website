@@ -6,9 +6,22 @@
 
 {% block body %}
 <h1>Blog City</h1>
+    <hr>
+    <h2>New Blog Posts</h2>
+    <form action="/posts" method="POST">
+        Title: <input type="text" name="title" id="title">
+        <br>
+        Author: <input type="text" name="author" id="author">
+        <br>
+        Content: <input type="text" name="content" id="content">
+        <br>
+        <input type="submit" value="submit">
+    </form>
+    <hr>
+
     {% for post in posts %}
     <h2>{{ post.title }}</h2>
-        {% if post.author%}
+        {% if post.author %}
             <h3>{{ post.author }}</h3>
         {% else %}
             <h3>N/A</h3>

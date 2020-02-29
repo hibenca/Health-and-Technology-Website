@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -16,25 +16,24 @@ class BlogPosts(db.Model):
     def __repr__(self):
         return 'Blog post ' + str(self.id)
 
-all_posts = [
-    {
-        "title": "Post 1",
-        "content": "This is my content",
-        "author": "Corey"
-    },
-    {
-        "title": "Post 2",
-        "content": "This is my content 2"
-    }
-]
 
 @app.route('/')
 def index():
     return render_template("index.html")
 
-@app.route('/posts')
+@app.route('/posts', methods=["GET", "POST"])
 def posts():
-    return render_template("posts.html", posts=all_posts)
+    if request.method == "POST":
+        post_title = request.form['title']
+        post_author = request.form['author']
+        post_content = request.form['content']
+        new_post = BlogPosts(title=post_title, author=post_author, content=post_content)
+        db.session.add(new_post)
+        db.session.commit()
+        return redirect("/posts")
+    else:
+        all_posts = BlogPosts.query.all()
+        return render_template("posts.html", posts=all_posts)
 
 @app.route('/<string:user>')
 def user(user):
