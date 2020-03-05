@@ -9,14 +9,16 @@
     <hr>
     <h2>Edit Posts</h2>
     <form action="/posts/edit/{{ post.id }}" method="POST">
-        Title: <input type="text" name="title" id="title" value="{{ post.title }}">
+        <label for="title">Title:</label>
+        <input class="form-control mr-sm-2" type="search" name="title" id="title" value="{{ post.title }}">
         <br>
-        Author: <input type="text" name="author" id="author" value="{{ post.author }}">
+        <label for="author">Author:</label>
+        <input class="form-control mr-sm-2" type="text" name="author" id="author" value="{{ post.author }}">
         <br>
-        Content: <input type="text" name="content" id="content" value="{{ post.content }}">
+        <label for="content">Content:</label>
+        <textarea class="form-control" name="content" id="content" rows="3">{{ post.content }}</textarea>
         <br>
         <input type="submit" value="Save">
     </form>
-
 
 {% endblock %}

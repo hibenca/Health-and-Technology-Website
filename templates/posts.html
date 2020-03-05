@@ -9,13 +9,16 @@
     <hr>
     <h2>New Blog Posts</h2>
     <form action="/posts" method="POST">
-        Title: <input type="text" name="title" id="title">
+        <label for="title">Title:</label>
+        <input class="form-control mr-sm-2" type="search" name="title" id="title" placeholder="Enter Title" aria-label="Enter Title">
         <br>
-        Author: <input type="text" name="author" id="author">
+        <label for="author">Author:</label>
+        <input class="form-control mr-sm-2" type="text" name="author" id="author" placeholder="Author's Name">
         <br>
-        Content: <input type="text" name="content" id="content">
+        <label for="content">Content:</label>
+        <textarea class="form-control" name="content" id="content" rows="3" placeholder="Content"></textarea>
         <br>
-        <input type="submit" value="submit">
+        <input type="submit" value="Submit">
     </form>
     <hr>
 
@@ -26,7 +29,7 @@
         {% else %}
             <h3>N/A</h3>
         {% endif %}
-        <p>{{ post.content }}</p>
+        <p style="white-space: pre-wrap">{{ post.content }}</p>
         <a class="btn btn-danger" href="/posts/delete/{{ post.id }}">Delete</a>
         <a class="btn btn-primary" href="/posts/edit/{{ post.id }}">Edit</a>
         <hr>
