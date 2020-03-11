@@ -2,7 +2,8 @@
   <configuration default="false" name="Portfolio" type="Python.FlaskServer">
     <option name="flaskDebug" value="true" />
     <module name="Portfolio" />
-    <option name="targetType" value="PYTHON" />
+    <option name="target" value="C:\Users\Corey\PycharmProjects\Portfolio" />
+    <option name="targetType" value="PATH" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
     <option name="SDK_HOME" value="" />
