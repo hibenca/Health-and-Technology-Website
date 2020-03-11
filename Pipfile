@@ -7,10 +7,9 @@ verify_ssl = true
 
 [packages]
 flask = "*"
-flask-sqlalchemy = "*"
+flask_sqlalchemy = "*"
 gunicorn = "*"
 ordereddict = "*"
-flask-sqlalchemy = "*"
 
 [requires]
 python_version = "3.7"
