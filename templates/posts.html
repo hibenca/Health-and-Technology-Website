@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block body %}
+<div class="container">
 <h1>Blog City</h1>
     <hr>
     <h2>Posts</h2>
@@ -23,4 +24,5 @@
         <a class="btn btn-primary" href="/posts/edit/{{ post.id }}">Edit</a>
         <hr>
     {% endfor %}
+</div>
 {% endblock %}

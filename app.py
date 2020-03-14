@@ -78,9 +78,17 @@ def new_posts():
 def about():
     return render_template('about.html')
 
-@app.route('/<string:user>')
-def user(user):
-    return f"What up {user}"
+@app.route('/skills')
+def skills():
+    return render_template('skills.html')
+
+@app.route('/contact', methods=["GET", "POST"])
+def contact():
+    # if request.method == "POST":
+    #    reply_to = request.form.get('email')
+    #    message = request.form.get('message')
+    return render_template('contact.html')
+
 
 
 if __name__ == '__main__':
