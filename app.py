@@ -19,6 +19,26 @@ class BlogPosts(db.Model):
         return 'Blog post ' + str(self.id)
 
 
+class ContactMe(db.Model):
+    # MANUAL TABLE NAME
+    __tablename__ = "ContactMe"
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(20), nullable=False)
+    email = db.Column(db.String(20), nullable=False)
+    subject = db.Column(db.String(10), nullable=False)
+    message = db.Column(db.Text, nullable=False)
+
+    def __init__(self, name, email, subject, message):
+        self.name = name
+        self.email = email
+        self.subject = subject
+        self.message = message
+
+    def __repr__(self):
+        return "Contacted Me"
+
+
 @app.route('/')
 def index():
     return render_template("index.html")
@@ -74,21 +94,30 @@ def new_posts():
     else:
         return render_template("new_posts.html")
 
+
 @app.route('/about')
 def about():
     return render_template('about.html')
+
 
 @app.route('/skills')
 def skills():
     return render_template('skills.html')
 
+
 @app.route('/contact', methods=["GET", "POST"])
 def contact():
-    # if request.method == "POST":
-    #    reply_to = request.form.get('email')
-    #    message = request.form.get('message')
-    return render_template('contact.html')
+    if request.method == "POST":
+        name = request.form.get('name')
+        email = request.form.get('email')
+        subject = request.form.get('subject')
+        message = request.form.get('message')
+        contact_message = ContactMe(name, email, subject, message)
+        db.session.add(contact_message)
+        db.session.commit()
+        return redirect('/contact')
 
+    return render_template('contact.html')
 
 
 if __name__ == '__main__':
