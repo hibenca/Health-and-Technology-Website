@@ -1,16 +1,18 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>New Posts</title>
+    <title>New Posts</title>
 {% endblock %}
 
 {% block body %}
-<h1>New Posts Page</h1>
+    <div class="container">
+    <h1>New Posts Page</h1>
     <hr>
     <h2>New Blog Posts</h2>
     <form action="/posts" method="POST">
         <label for="title">Title:</label>
-        <input class="form-control mr-sm-2" type="search" name="title" id="title" placeholder="Enter Title" aria-label="Enter Title">
+        <input class="form-control mr-sm-2" type="search" name="title" id="title" placeholder="Enter Title"
+               aria-label="Enter Title">
         <br>
         <label for="author">Author:</label>
         <input class="form-control mr-sm-2" type="text" name="author" id="author" placeholder="Author's Name">
@@ -21,4 +23,5 @@
         <input type="submit" value="Submit">
     </form>
     <hr>
+    </div>
 {% endblock %}
