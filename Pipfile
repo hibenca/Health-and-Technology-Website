@@ -10,6 +10,7 @@ flask = "*"
 flask_sqlalchemy = "*"
 gunicorn = "*"
 ordereddict = "*"
+flask-wtf = "*"
 
 [requires]
 python_version = "3.7"

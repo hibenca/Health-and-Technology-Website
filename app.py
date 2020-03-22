@@ -1,9 +1,14 @@
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
+import os
 from datetime import datetime
 
+basedir = os.path.abspath(os.path.dirname(__file__))
+
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///posts.db"
+app.config['SECRET_KEY'] = 'you-will-never-guess'
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL') or \
+        'sqlite:///' + os.path.join(basedir, 'posts.db')
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
@@ -41,7 +46,7 @@ class ContactMe(db.Model):
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template('index.html')
 
 
 @app.route('/posts', methods=["GET", "POST"])
@@ -78,7 +83,7 @@ def edit(id):
         db.session.commit()
         return redirect('/posts')
     else:
-        return render_template("/edit.html", post=post)
+        return render_template("edit.html", post=post)
 
 
 @app.route('/posts/new', methods=["GET", "POST"])
@@ -115,7 +120,7 @@ def contact():
         contact_message = ContactMe(name, email, subject, message)
         db.session.add(contact_message)
         db.session.commit()
-        return redirect('/contact')
+        return redirect('contact.html')
 
     return render_template('contact.html')
 
