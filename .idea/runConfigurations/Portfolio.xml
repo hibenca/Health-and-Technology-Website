@@ -2,13 +2,13 @@
   <configuration default="false" name="Portfolio" type="Python.FlaskServer">
     <option name="flaskDebug" value="true" />
     <module name="Portfolio" />
-    <option name="target" value="C:\Users\Corey\PycharmProjects\Portfolio" />
+    <option name="target" value="C:\Users\Corey\Desktop\Developer\Web Development\ch-Portfolio-1.0" />
     <option name="targetType" value="PATH" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
-    <option name="SDK_HOME" value="" />
+    <option name="SDK_HOME" value="C:\Users\Corey\Anaconda3\python.exe" />
     <option name="WORKING_DIRECTORY" value="" />
-    <option name="IS_MODULE_SDK" value="true" />
+    <option name="IS_MODULE_SDK" value="false" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
     <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />

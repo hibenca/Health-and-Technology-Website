@@ -2,18 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+          integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+
+    <!-- JavaScript -->
     <script src="/static/js/main.js"></script>
+
+    <!-- jQuery -->
     <script
             src="http://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
             crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Raleway">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+
+
     {% block head %}{% endblock %}
 </head>
 
+<!-- Nav Bar -->
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #181818">
         <a class="navbar-brand" href="./">CH</a>
@@ -43,10 +61,10 @@
                 </li>
             </ul>
             <a class="navbar-brand" href="https://www.linkedin.com/in/hibencorey/" target="_blank">
-                <img src="/static/LI-In-Bug.png" style="width: 42px;height: 42px;border: 0">
+                <i class="fab fa-linkedin fa-lg"></i>
             </a>
             <a class="navbar-brand" href="https://www.github.com/hibenca" target="_blank">
-                <img src="/static/GitHub-Mark-Light.png" style="width: 42px;height: 42px;border: 0">
+                <i class="fab fa-github fa-lg"></i>
             </a>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -59,24 +77,24 @@
 {% block body %}{% endblock %}
 
 
-
+<!-- Footer -->
 <footer class="page-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-8 col-sm-12">
-      <h6 class="text-uppercase font-weight-bold">Additional Information</h6>
-      <p>I love health.</p>
-      <p>I love technology.</p>
-    </div>
-    <div class="col-lg-4 col-md-4 col-sm-12">
-      <h6 class="text-uppercase font-weight-bold">Contact</h6>
-      <p>Minneapolis, MN
-      <br/>hibencorey@gmail.com
-    </div>
-  </div>
-  <div class="footer-copyright text-center">© 2020 Copyright: Corey Hiben</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <h6 class="text-uppercase font-weight-bold">Additional Information</h6>
+                <p>I love health.</p>
+                <p>I love technology.</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                <p>Minneapolis, MN
+            </div>
+        </div>
+        <div class="footer-copyright text-center">© 2020 Copyright: Corey Hiben</div>
 </footer>
 
+<!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
